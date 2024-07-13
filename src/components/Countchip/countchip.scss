@@ -1,0 +1,11 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.main{
+    .countchip-wrapper{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+    }
+}

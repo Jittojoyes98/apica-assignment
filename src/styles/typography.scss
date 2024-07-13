@@ -1,0 +1,17 @@
+@import "./mixins.scss";
+
+h1{
+    @include typography(64px,bold);
+}
+
+h1{
+    @include typography(52px,bold);
+}
+
+h1{
+    @include typography(44px,bold);
+}
+
+p{
+    @include typography(32px,bold);
+}

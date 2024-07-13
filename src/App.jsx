@@ -1,10 +1,10 @@
 import React, { Suspense,useState } from "react";
 // import { Layout } from "../_layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import Orders from "./pages/Orders/Orders.jsx";
 import Layout from "./layout/Layout.jsx";
+import './global.scss'
 
 function App() {
   const [count, setCount] = useState(0);

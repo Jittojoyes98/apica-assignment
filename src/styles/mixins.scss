@@ -1,0 +1,9 @@
+@mixin typography($size,$weight){
+    font-size: $size;
+    font-weight: $weight;
+}
+@mixin center-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
