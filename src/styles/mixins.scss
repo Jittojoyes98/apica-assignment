@@ -7,3 +7,19 @@
     justify-content: center;
     align-items: center;
 }
+@mixin textcolor($color,$opacity){
+    color:rgba($color,$opacity);
+}
+$opacity:10;
+$font-types:3;
+@mixin colo-x($color,$colorname){
+  @for $i from 1 through $opacity {
+  .color-#{$colorname}-#{$i} { color:rgba($color, calc($i/10)) }
+  }
+}
+
+@mixin font-x($font-size,$font-weight,$name,$font-type){
+  @for $i from 1 through $font-types {
+  .#{$name}#{$i}#{$font-type} { @include typography(($font-size)+px,$font-weight) }
+  }
+}

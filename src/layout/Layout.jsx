@@ -11,14 +11,12 @@ import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { navIcons,commonAssets,menuItems } from '../constants/assetfiles';
+import { commonAssets,menuItems } from '../constants/assetfiles';
 import "./layout.scss";
 import Header from './Header';
-
 const drawerWidth = 296;
 
 const openedMixin = (theme) => ({
@@ -158,7 +156,8 @@ export default function Layout() {
                     justifyContent: 'center',
                   }}
                 >
-                  <img src={item.icon}  alt={item.name}/> 
+                  {/* <img src={item.icon}  alt={item.name}/>  */}
+                  <Icon fill="white" stroke="yellow"/>
                 </ListItemIcon>
                 <ListItemText primary={item.name} sx={{ display: open ? "block" : "none" }} />
               </ListItemButton>

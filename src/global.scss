@@ -3,6 +3,7 @@
 @import "./styles/typography.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 // Base styles
 * {
@@ -30,16 +31,14 @@ body {
   height: 100%;
 }
 body {
-  background-color: $main-background-color;
+  background-color: $background-color;
   color: $black-color;
   -webkit-font-smoothing: antialiased;
   font-family: $font-family;
   font-size: $normal-font-size;
 }
 
-/*  
-  Typography
-*/
+
 
 // body,
 // button,
@@ -56,6 +55,122 @@ body {
 // h3 {
 //   color: $black-color;
 // }
+
+/*  
+  Typography
+*/
+
+
+/*  
+  Para
+*/
+.p1bold{
+  @include typography(16px,700)
+}
+.p2bold{
+  @include typography(14px,700)
+}
+.p1medium{
+  @include typography(16px,500)
+}
+.p2medium{
+  @include typography(14px,500)
+}
+.p1regular{
+  @include typography(16px,400)
+}
+.p2regular{
+  @include typography(14px,400)
+}
+
+/*  
+  Sub
+*/
+.sub1bold{
+  @include typography(32px,700)
+}
+.sub2bold{
+  @include typography(28px,700)
+}
+.sub3bold{
+  @include typography(20px,700)
+}
+
+
+.sub1medium{
+  @include typography(32px,500)
+}
+.sub2medium{
+  @include typography(28px,500)
+}
+.sub3medium{
+  @include typography(20px,500)
+}
+
+.sub1regular{
+  @include typography(32px,400)
+}
+.sub2regular{
+  @include typography(28px,400)
+}
+.sub3regular{
+  @include typography(20px,400)
+}
+
+/*  
+  Label
+*/
+
+.label1bold{
+  @include typography(12px,700)
+}
+.label2bold{
+  @include typography(12px,700)
+}
+.label3bold{
+  @include typography(12px,700)
+}
+
+.label1medium{
+  @include typography(12px,500)
+}
+.label2medium{
+  @include typography(12px,500)
+}
+.label3medium{
+  @include typography(12px,500)
+}
+
+.label1regular{
+  @include typography(12px,400)
+}
+.label2regular{
+  @include typography(12px,400)
+}
+.label3regular{
+  @include typography(12px,400)
+}
+
+
+/*  
+  Font
+*/
+
+.interfont{
+  font-family: $font-family-secondary;
+}
+
+.center{
+  @include center-align
+}
+
+
+/*
+  Color
+*/
+
+@include colo-x($black-color,"black");
+@include colo-x($action-green-color,"green");
 
 ul {
   list-style: none;
