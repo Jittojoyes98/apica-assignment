@@ -112,7 +112,7 @@ export default function Layout() {
 
   return (
     <div className="main">
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height:"100%" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} className='sidebar-drawer'>
         <Toolbar >
@@ -178,7 +178,7 @@ export default function Layout() {
         </List>
         
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 0 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 0, display:"flex", flexDirection:"column" }}>
         <DrawerHeader />
         <Outlet/>
       </Box>

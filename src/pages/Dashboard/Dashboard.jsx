@@ -23,7 +23,7 @@ const Dashboard = () => {
           {
             CardData.map((card,index)=>{
               return (
-                <Grid item xs={12} md={((index+1) % 3 === 0 ? 5 : 3.5)} sm={((index+1) % 3 === 0 ? 6 : 12)} key={index}>
+                <Grid item xs={12} md={4} sm={((index+1) % 3 === 0 ? 6 : 12)} key={index}>
                   <Card card={card}/>
                 </Grid>
               )
