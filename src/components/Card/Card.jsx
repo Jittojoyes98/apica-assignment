@@ -13,8 +13,8 @@ const Card = ({card}) => {
         <Box className="card-content">
             <Box className="card-duration">
                 <Box>
-                    <Box className='card-logo-type' sx={{backgroundColor:"red"}}>
-                        <CardIcon/>
+                    <Box className='card-logo-type' sx={{backgroundColor:card.iconBackground}}>
+                        <CardIcon />
                     </Box>
                 </Box>
                 <Box>

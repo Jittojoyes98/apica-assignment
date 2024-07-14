@@ -12,14 +12,18 @@
 }
 $opacity:10;
 $font-types:3;
-@mixin colo-x($color,$colorname){
-  @for $i from 1 through $opacity {
-  .color-#{$colorname}-#{$i} { color:rgba($color, calc($i/10)) }
-  }
-}
+// $font-sizes:(32px,28px,20px);
 
 @mixin font-x($font-size,$font-weight,$name,$font-type){
   @for $i from 1 through $font-types {
   .#{$name}#{$i}#{$font-type} { @include typography(($font-size)+px,$font-weight) }
   }
 }
+
+// for each font, need to change the logic.
+@mixin colo-x($color,$colorname){
+  @for $i from 1 through $opacity {
+  .color-#{$colorname}-#{$i} { color:rgba($color, calc($i/10)) }
+  }
+}
+

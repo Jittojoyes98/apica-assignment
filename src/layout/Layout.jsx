@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet,useLocation } from "react-router-dom";
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,8 +15,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { commonAssets,menuItems } from '../constants/assetfiles';
-import "./layout.scss";
 import Header from './Header';
+import "./layout.scss";
+
 const drawerWidth = 296;
 
 const openedMixin = (theme) => ({
@@ -89,8 +90,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function Layout() {
   const theme = useTheme();
+  const location = useLocation();
   const [open, setOpen] = React.useState(false);
+  const [path,setPath]=React.useState(location.pathname)
 
+  React.useEffect(()=>{
+    setPath(location.pathname)
+  },[location])
+  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -98,6 +105,10 @@ export default function Layout() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleClick=React.useCallback(()=>{
+    
+  },[path])
 
   return (
     <div className="main">
@@ -118,8 +129,7 @@ export default function Layout() {
               ...(open && { display: 'none' }),
             }}
           >
-            <ChevronRightIcon />
-            
+            <ChevronRightIcon />  
           </IconButton>
           <Header/>
         </Toolbar>
@@ -128,7 +138,7 @@ export default function Layout() {
         <DrawerHeader sx={{marginTop:"6px", padding:"0"}}>
             <div className='logo-wrapper'>
               <img src={commonAssets["logo"]} alt='logo'/>
-              <p className='logo-name'>Metrix</p>
+              <p className='sub3bold'>Metrix</p>
             </div>
           <IconButton onClick={handleDrawerClose} className='drawer-opener-button'>
             {theme.direction === 'rtl' ? <ChevronRightIcon  /> : <ChevronLeftIcon />}
@@ -136,7 +146,8 @@ export default function Layout() {
         </DrawerHeader>
         <List className='menu-list-wrapper'>
           {menuItems.map((item, index) => {
-            const Icon=item.icon;
+            const IconInactive=item.iconInactive;
+            const IconActive=item.iconActive;
             return (
               <ListItem key={item.name} disablePadding className='menu-list-item' sx={{ display: 'block' }}>
               <ListItemButton
@@ -147,7 +158,8 @@ export default function Layout() {
                 }}
                 component={Link}
                 to={item.to}
-                className="active-button"
+                className={ `${item.to === path ? 'active-button' : ''}`}
+                // className="active-button"
               >
                 <ListItemIcon
                   sx={{
@@ -156,8 +168,7 @@ export default function Layout() {
                     justifyContent: 'center',
                   }}
                 >
-                  {/* <img src={item.icon}  alt={item.name}/>  */}
-                  <Icon fill="white" stroke="yellow"/>
+                  {item.to === path ? <IconActive  /> : <IconInactive/>}
                 </ListItemIcon>
                 <ListItemText primary={item.name} sx={{ display: open ? "block" : "none" }} />
               </ListItemButton>
