@@ -1,28 +1,25 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
-.main{
-    .card-wrapper{
-        padding: 11px 15px;
-        border-radius: 12px;
-        background-color:white;
-    }
-    .card-duration{
-        display: flex;
-        justify-content: space-between;
-    }
-    .card-logo-type{
-        width: 36px;
-        height: 36px;
-        border-radius: 8px;
-        @include center-align;
-    }
-    .card-content{
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-    .menu-dropdown-wrapper{
-        border: 0;
-    }
+.main {
+  .card-wrapper {
+    padding: 11px 15px;
+    border-radius: 12px;
+    background-color: white;
+  }
+  .card-duration {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-logo-type {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    @include center-align;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 }

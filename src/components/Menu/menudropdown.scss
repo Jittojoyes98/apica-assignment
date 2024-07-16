@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.main {
+  .menu-dropdown-wrapper {
+    font-family: $font-family;
+    gap: 7px;
+    cursor: pointer;
+    color: $dropdown-color;
+    fieldset {
+      border: none;
+    }
+    #demo-simple-select {
+      padding-left: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .MuiSelect-icon {
+      right: 0px;
+      top: calc(50% - 12px);
+    }
+  }
+}
