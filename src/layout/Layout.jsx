@@ -113,7 +113,7 @@ export default function Layout() {
       <Box sx={{ display: "flex", height: "100%" }}>
         <CssBaseline />
         <AppBar position="fixed" open={open} className="sidebar-drawer">
-          <Toolbar>
+          <Toolbar className={`${open ? "sidebar-header-wrapper" : ""}`}>
             {open ? (
               <></>
             ) : (
@@ -135,7 +135,7 @@ export default function Layout() {
             >
               <ChevronRightIcon />
             </IconButton>
-            <Header />
+            <Header open={open} />
           </Toolbar>
         </AppBar>
         <Drawer
@@ -143,11 +143,16 @@ export default function Layout() {
           open={open}
           className={`drawer-wrapper-${open ? "shown" : "hidden"}`}
         >
-          <DrawerHeader sx={{ marginTop: "6px", padding: "0" }}>
+          <DrawerHeader sx={{ padding: "0" }}>
             <div className="logo-wrapper">
-              <img src={commonAssets["logo"]} alt="logo" />
+              <Link to="/">
+                <div className="logo-image-wrapper">
+                  <img src={commonAssets["logo"]} alt="logo" />
+                </div>
+              </Link>
               <p className="sub3bold">Metrix</p>
             </div>
+
             <IconButton
               onClick={handleDrawerClose}
               className="drawer-opener-button"
