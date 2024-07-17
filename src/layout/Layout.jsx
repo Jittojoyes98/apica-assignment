@@ -47,7 +47,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   // zIndex:0,
   alignItems: "center",
   justifyContent: "flex-end",
-  padding: theme.spacing(0, 1),
+  padding: 0,
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
@@ -151,7 +151,7 @@ export default function Layout() {
                   <img src={commonAssets["logo"]} alt="logo" />
                 </div>
               </Link>
-              <p className="sub3bold">Metrix</p>
+              <p className="sub3medium">Metrix</p>
             </div>
 
             <IconButton
@@ -213,7 +213,9 @@ export default function Layout() {
           sx={{ flexGrow: 1, p: 0, display: "flex", flexDirection: "column" }}
         >
           <DrawerHeader />
-          <Outlet />
+          <Box className="dashboard-wrapper">
+            <Outlet />
+          </Box>
         </Box>
       </Box>
     </div>
