@@ -12,7 +12,7 @@ const MenuDropdown = ({ backgroundColor }) => {
   };
   const DropdownIcon = commonAssets["dropdown"];
   return (
-    <Box sx={{ backgroundColor: backgroundColor }}>
+    <Box sx={{ backgroundColor: backgroundColor, display: "flex" }}>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"

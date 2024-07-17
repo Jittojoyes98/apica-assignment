@@ -1,11 +1,22 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-.main{
-    .countchip-wrapper{
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: $secondary-color;
-    }
+.main {
+  .countchip-wrapper-open {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    @include center-align;
+  }
+  .countchip-wrapper-closed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    @include center-align;
+  }
 }

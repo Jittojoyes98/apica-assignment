@@ -17,6 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { commonAssets, menuItems } from "../constants/assetfiles";
 import Header from "./Header";
 import "./layout.scss";
+import Countchip from "../components/Countchip/Countchip";
 
 const drawerWidth = 296;
 
@@ -172,7 +173,7 @@ export default function Layout() {
                 <ListItem
                   key={item.name}
                   disablePadding
-                  className="menu-list-item"
+                  className="menu-list-item-wrapper"
                   sx={{ display: "block" }}
                 >
                   <ListItemButton
@@ -183,8 +184,9 @@ export default function Layout() {
                     }}
                     component={Link}
                     to={item.to}
-                    className={`${item.to === path ? "active-button" : ""}`}
-                    // className="active-button"
+                    className={`menu-list-item ${
+                      item.to === path ? "active-button " : ""
+                    }`}
                   >
                     <ListItemIcon
                       sx={{
@@ -199,6 +201,7 @@ export default function Layout() {
                       primary={item.name}
                       sx={{ display: open ? "block" : "none" }}
                     />
+                    <Countchip count={2} open={open} />
                   </ListItemButton>
                 </ListItem>
               );

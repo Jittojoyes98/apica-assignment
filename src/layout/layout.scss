@@ -9,7 +9,7 @@
       min-height: 64px;
     }
     .sidebar-header-wrapper {
-      padding: 14px 21px;
+      padding: 14px 19px;
     }
   }
   .sidebar-drawer {
@@ -17,13 +17,12 @@
       color: $black-color;
       margin-right: 0;
       margin-top: 6px;
-      // padding-right: 0;
     }
   }
   .menu-list-wrapper {
     padding: 0 32px;
     margin-top: 62px;
-    .menu-list-item {
+    .menu-list-item-wrapper {
       padding: 0px 16px;
       .active-button {
         background-color: $primary-color;
@@ -36,8 +35,12 @@
           }
         }
       }
+      .menu-list-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px 20px;
+      }
       .MuiListItemIcon-root {
-        padding: 16px;
         margin-right: 0;
       }
     }
@@ -68,7 +71,7 @@
         min-height: 64px;
       }
       .sidebar-header-wrapper {
-        padding: 14px 21px;
+        padding: 14px 19px;
         // padding: 0;
       }
     }
